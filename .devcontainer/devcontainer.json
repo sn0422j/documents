@@ -1,0 +1,22 @@
+{
+    "name": "documents",
+    "context": "..",
+    "dockerFile": "DockerFile",
+
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "/bin/bash"
+            }
+        },
+    },
+
+    "appPort": [ 8000 ],
+
+    "extensions": [
+        "sanaajani.taskrunnercode",
+        "oderwat.indent-rainbow",
+        "brunnerh.file-properties-viewer",
+    ],
+}

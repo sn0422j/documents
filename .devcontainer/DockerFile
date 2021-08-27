@@ -1,0 +1,4 @@
+FROM node:16.0.0
+EXPOSE 8000
+
+RUN npm install -g gatsby-cli

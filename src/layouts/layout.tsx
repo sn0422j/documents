@@ -3,11 +3,20 @@ import { Helmet } from "react-helmet"
 
 import Header from "./header"
 
+import "uikit/dist/css/uikit.min.css"
+
 interface LayoutProps {
     title: string
 }
 
 const Layout: React.FC<LayoutProps> = ({ title = "", children }) => {
+    if (typeof window !== "undefined") {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const UIkit = require("uikit/dist/js/uikit.min")
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        const icons = require("uikit/dist/js/uikit-icons.min")
+        UIkit.use(icons)
+    }
     const returnTop = () => {
         window.scrollTo({
             top: 0,
@@ -24,18 +33,15 @@ const Layout: React.FC<LayoutProps> = ({ title = "", children }) => {
                         content: "width=device-width, initial-scale=1",
                     },
                     {
+                        name: "icon",
+                        content: "favicon.ico",
+                    },
+                    {
                         name: "robots",
                         content: "noindex",
                     },
                 ]}
-            >
-                <link
-                    rel="stylesheet"
-                    href="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/css/uikit.min.css"
-                />
-                <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit-icons.min.js"></script>
-            </Helmet>
+            ></Helmet>
             <Header />
             <div className="uk-margin-top uk-margin-bottom uk-margin-left uk-margin-right">
                 {children}

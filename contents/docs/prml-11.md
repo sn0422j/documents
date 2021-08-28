@@ -1,5 +1,5 @@
 ---
-title: パターン認識と機械学習　第11章　サンプリング法
+title: パターン認識と機械学習 第11章 サンプリング法
 ---
 
 パターン認識と機械学習の第11章「サンプリング法」の解説資料です。各ノーテーションは本紙に従っています。
@@ -50,7 +50,9 @@ $$
 (\text{採択確率}) = \int \frac{\tilde{p}(z_0)}{kq(z)} q(z) dz = \frac{1}{k} \int \tilde{p}(z) dz
 $$
 
-==TODO: 棄却サンプリングの例== 
+<div style="text-align: center">
+    <video controls src="../videos/rejection_sampling.mp4" type="video/mp4"></video>
+</div>
 
 ### 11.1.3 適応的棄却サンプリング
 適切な提案分布 $q(z)$ を決めるのは難しいので、**ある包絡関数 $q(z)$ で覆うこと**を考える。初期のグリッド点集合によって区分的な包絡関数 $q(z)$ を構築し、それを用いてサンプリングする。
@@ -158,13 +160,20 @@ $$
 不変性以外にも、**エルゴード性**を持つ不変分布 = **平衡分布**である必要がある。エルゴード性とは、初期分布 $p(\bold{z}^{(0)})$ に依らず $m\to\infty$ で $p(\bold{z}^{(m)})$ が求めたい分布 $p^*(\bold{z})$ に収束することを指す。
 
 多くの場合、遷移確率を基本遷移の組 $\{B_k\}$ から構築する。
-- $T(\bold{z}',\bold{z}) = \sum_{k=1}^K \alpha_k B_k(\bold{z}',\bold{z})$
-    - 不変分布になる。
-    - 各基本遷移が詳細釣り合い条件を満たすならば、$T$ も詳細釣り合い条件を満たす。
 
-- $T(\bold{z}',\bold{z}) = \sum_{\bold{z}_1} \cdots \sum_{\bold{z}_{K-1}} B_1(\bold{z}',\bold{z}_1) \cdots B_{K-2}(\bold{z}_{K-2},\bold{z}_{K-1}) B_{K-1}(\bold{z}_{K-1},\bold{z})$
-    - 不変分布になる。
-    - 詳細釣り合い条件を満たす基本遷移の順序を $B_1, \dots, B_K, B_K, \dots, B_1$ と並べれば、$T$ も詳細釣り合い条件を満たす。
+次の場合は
+$$
+T(\bold{z}',\bold{z}) = \sum_{k=1}^K \alpha_k B_k(\bold{z}',\bold{z})
+$$
+- 不変分布になる。
+- 各基本遷移が詳細釣り合い条件を満たすならば、$T$ も詳細釣り合い条件を満たす。
+
+次の場合は
+$$
+T(\bold{z}',\bold{z}) = \sum_{\bold{z}_1} \cdots \sum_{\bold{z}_{K-1}} B_1(\bold{z}',\bold{z}_1) \cdots B_{K-2}(\bold{z}_{K-2},\bold{z}_{K-1}) B_{K-1}(\bold{z}_{K-1},\bold{z})
+$$
+- 不変分布になる。
+- 詳細釣り合い条件を満たす基本遷移の順序を $B_1, \dots, B_K, B_K, \dots, B_1$ と並べれば、$T$ も詳細釣り合い条件を満たす。
 
 ### 11.2.2 Metropolis-Hastings アルゴリズム
 Metropolis-Hastings アルゴリズムでは、**提案分布 $q_k(\bold{z}|\bold{z}^{(\tau)})$ は対称でなくてもよい**。  
@@ -183,6 +192,10 @@ $$
 $$
 
 > 分布の変動が方向によって大きく異なる場合、MHアルゴリズムの収束は非常に遅くなり得る問題がある。
+
+<div style="text-align: center">
+    <video controls src="../videos/metropolis_hastings.mp4" type="video/mp4"></video>
+</div>
 
 ## 11.3 ギブズサンプリング
 ギブズサンプリングは、MHアルゴリズムの特別な場合であるが、**単純で適用範囲の広いMCMC法**である。
@@ -206,6 +219,10 @@ z_i' = \mu_i + \alpha(z_i - \mu_i) + \sigma_i \sqrt{1-\alpha^2} \nu, \quad \nu \
 $$
 
 > 8.3.3節のICMアルゴリズムは、ギブズサンプリングの貪欲法的な近似法とみなせる。
+
+<div style="text-align: center">
+    <video controls src="../videos/gibbs_sampling.mp4" type="video/mp4"></video>
+</div>
 
 ## 11.4 スライスサンプリング
 スライスサンプリングは、**分布の特徴に合わせてステップサイズを自動的に調整する**ことができる。
@@ -298,7 +315,9 @@ $$
 >$$ 
 > となって等しく、$H(\mathcal{R})\lt H(\mathcal{R}')$ のときも同様である。従って、詳細釣り合い条件を満たす。
 
-==TODO:ハイブリッドモンテカルロの例==
+<div style="text-align: center">
+    <video controls src="../videos/hybridMCMC.mp4" type="video/mp4"></video>
+</div>
 
 ## 11.6 分配関数の推定
 分配関数はモデルエビデンスになるため関心がある。  

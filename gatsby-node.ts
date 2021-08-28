@@ -8,8 +8,6 @@ export const createPages: GatsbyNode["createPages"] = async ({
 }) => {
     const { createPage } = actions
 
-    const blogPost = resolve(`./src/templates/docs.tsx`)
-
     const result = await graphql<{
         allMarkdownRemark: Pick<GatsbyTypes.Query["allMarkdownRemark"], "nodes">
     }>(
@@ -33,11 +31,12 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
     if (posts.length > 0) {
         posts.forEach((post) => {
+            const slug: string = post!.fields!.slug!
             createPage({
-                path: post!.fields!.slug!,
-                component: blogPost,
+                path: slug,
+                component: resolve(`./src/templates/docs.tsx`),
                 context: {
-                    slug: post!.fields!.slug,
+                    slug: slug,
                 },
             })
         })

@@ -24,13 +24,20 @@ strong {
     background-color: oldlace;
 }
 blockquote {
-    margin: 1em 0em;
-    padding: 0em 1em;
+    margin: 1em 0em !important;
+    padding: 0.5em 1em !important;
     border: 2px solid #ccc;
     border-radius: 3em .7em 2em .7em/.7em 2em .7em 3em;
-    color: rgb(100, 100, 100);
+    color: rgb(100, 100, 100) !important;
+    font-size: initial !important;
+    line-height: initial !important;
+    font-style: initial !important;
+}
+video {
+    text-align: center;
 }
 
-.main-body {
-    margin: 1em;
+.math-display {
+    overflow: auto;
+    overflow-y: visible;
 }

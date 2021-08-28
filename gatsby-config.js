@@ -35,6 +35,20 @@ module.exports = {
             },
         },
         {
+            resolve: "gatsby-source-filesystem",
+            options: {
+                name: "videos",
+                path: `${__dirname}/contents/videos`,
+            },
+        },
+        {
+            resolve: 'gatsby-plugin-copy-files',
+            options: {
+                source: `${__dirname}/contents/videos`,
+                destination: '/videos'
+            }
+        },
+        {
             resolve: "gatsby-transformer-remark",
             options: {
                 plugins: [

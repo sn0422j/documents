@@ -122,7 +122,7 @@ $$
 ## 10.2 例：変分混合ガウス分布 
 
 <div class="div-img">
-    <img src="../images/GMM.png" width=200 alt="figure10-5.png">
+    <img src="../images/prml-10/GMM.png" width=200 alt="figure10-5.png">
 </div>
 
 上のようなモデルの同時分布は以下のようになる。ただし、$\bold{X} = \{\bold{x}_n\}_{n=1}^N, \bold{Z} = \{\bold{z}_n\}_{n=1}^N$ である。
@@ -284,7 +284,7 @@ $\rightarrow$ 因子の更新は局所的な計算になる。そのため、局
 #### (A) 凸性とルジャンドル変換
 <div class="div-img">
 
-![figure10-11.png](../images/legendre.png)
+![figure10-11.png](../images/prml-10/legendre.png)
 </div>
 
 下に凸な曲線 $y=f(x)$ の「接線」を $y = \eta x - g(\eta)$ と表すことにする。
@@ -312,7 +312,7 @@ $$
 
 <div class="div-img">
 
-![sigmoid_fx.png](../images/sigmoid_fx.png)
+![sigmoid_fx.png](../images/prml-10/sigmoid_fx.png)
 </div>
 
 $f(x) = - \ln \{\exp[x/2] + \exp[-x/2]\}$ とおくと、これは **$x^2$ の凸関数**なので共役な関数 $g(\eta)$ が与えられる。
@@ -521,7 +521,7 @@ $$
 
 <div class="div-img">
 
-![noise_data.png](../images/noise_data.png)
+![noise_data.png](../images/prml-10/noise_data.png)
 </div>
 
 以下のノイズを含む混合ガウス分布から生成した観測データ $\mathcal{D} = \{\bold{x}_n\}_{n=1}^N$ に対して、EP法を適用しよう。
@@ -565,7 +565,7 @@ $3.$ 収束まで繰り返す。
 
 <div class="div-img">
 
-![figure10-18.png](../images/figure10-18.png)
+![figure10-18.png](../images/prml-10/figure10-18.png)
 </div>
 
 

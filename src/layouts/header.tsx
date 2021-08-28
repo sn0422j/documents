@@ -3,9 +3,7 @@ import { Link } from "gatsby"
 
 const Header: React.FC = () => {
     return (
-        <nav
-            className="uk-navbar uk-navbar-container uk-padding-small"
-        >
+        <nav className="uk-navbar uk-navbar-container uk-padding-small">
             <div className="uk-navbar-left">
                 <Link
                     to="/"

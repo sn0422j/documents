@@ -13,7 +13,7 @@ const Header: React.FC = () => {
             </div>
             <div className="uk-navbar-right">
                 <a
-                    href="/"
+                    href="/https://github.com/sn0422j/documents"
                     className="uk-icon-button uk-hidden-small"
                     uk-icon="icon: github; ratio: 1.5"
                 />

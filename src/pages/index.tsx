@@ -35,7 +35,8 @@ const IndexPage: React.FC<PageProps> = () => {
                             </li>
                             <li>
                                 <Link to="/signal-process-08">
-                                    信号処理 8章 離散時間システムの周波数領域表現
+                                    信号処理 8章
+                                    離散時間システムの周波数領域表現
                                 </Link>
                             </li>
                         </ul>
